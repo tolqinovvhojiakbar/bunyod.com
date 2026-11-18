@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kirish va ro‘yxatdan o‘tish — Bunyod</title>
+<meta name="description" content="Bunyod shaxsiy kabineti: tizimga kiring yoki ro‘yxatdan o‘ting va tanlangan uy loyihasini buyurtma qiling.">
+<meta name="theme-color" content="#1f1c19"><link rel="icon" href="./assets/house.png">
+<link rel="stylesheet" href="pt.css"><script src="pt.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="site.css"><style>main{padding-top:4.5rem}
+.au{min-height:calc(100svh - 4.5rem);display:grid}
+.au-v{position:relative;display:none;isolation:isolate;color:var(--if);background:var(--ink);overflow:hidden}
+.au-v img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.au-v:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,oklch(.17 .008 60/.35),oklch(.17 .008 60/.88))}
+.au-v div{position:absolute;left:3rem;right:3rem;bottom:3rem}.au-v h2{font-size:clamp(2.4rem,3.6vw,3.4rem);margin:1.25rem 0 0;line-height:1}
+.au-v ul{margin-top:2rem;display:grid;gap:.8rem;color:var(--im);font-size:.95rem}.au-v li{display:flex;gap:.75rem;align-items:center}.au-v .i{color:var(--bs);width:1.1rem;height:1.1rem}
+.au-f{display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem 4rem}
+.au-c{width:100%;max-width:30rem}
+.au-c h1{font-size:clamp(2.6rem,6vw,3.6rem);margin:1rem 0 1.25rem}
+.au-t{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--bd);margin-bottom:1.75rem}
+.au-t button{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:1rem 0;font:600 .75rem "Hanken Grotesk";letter-spacing:.18em;text-transform:uppercase;color:var(--mf);cursor:pointer;transition:.3s var(--e)}
+.au-t button:hover{color:var(--fg)}.au-t button[aria-selected=true]{color:var(--fg);border-color:var(--bronze)}
+.au-t button:focus-visible{outline:2px solid var(--bronze);outline-offset:-2px}
+.au-n{display:none;gap:.9rem;align-items:flex-start;margin-bottom:1.5rem;padding:1rem 1.15rem;background:var(--sec);border-left:2px solid var(--bronze);font-size:.92rem}
+.au-n.on{display:flex}.au-n .i{color:var(--bronze);margin-top:.15rem}.au-n b{display:block;font-weight:600;margin-top:.25rem}
+.au form[hidden]{display:none}.au .btn{width:100%}
+.au-e{min-height:1.2rem;margin-bottom:.75rem;color:var(--err);font-size:.85rem}
+.au-s{margin-top:1.5rem;text-align:center;color:var(--mf);font-size:.92rem}.au-s button{background:none;border:0;font:inherit;color:var(--fg);text-decoration:underline;cursor:pointer;margin-left:.35rem}.au-s button:hover{color:var(--bronze)}
+.au-d{margin-top:1.5rem;font-size:.72rem;line-height:1.5;color:var(--mf);text-align:center}
+@media(min-width:1024px){.au{grid-template-columns:1fr 1fr}.au-v{display:block}.au-f{padding:4rem}}
+</style><link rel="stylesheet" href="i18n.css"><script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("bn_lang");if(l==="ru"||l==="en"){document.documentElement.classList.add("i18n-w");setTimeout(function(){document.documentElement.classList.remove("i18n-w")},2500)}}catch(e){}</script></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="ar" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol><symbol id="ad" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol><symbol id="up" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol><symbol id="se" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+<symbol id="ph2" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="mp" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="ck" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="cd" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="mn" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol><symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol><symbol id="ruler" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0zM14.5 12.5l2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/></symbol>
+<symbol id="wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol><symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="hat" viewBox="0 0 24 24"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M14 6a6 6 0 0 1 6 6v3M4 15v-3a6 6 0 0 1 6-6"/><rect x="2" y="15" width="20" height="4" rx="1"/></symbol>
+</defs></svg>
+<header id="hd" class="s"><nav class="top w"><a class="" href="index.html" data-pt data-n="" data-t="Bosh sahifa" aria-label="Bunyod — bosh sahifa"><span class="logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 15 16 4l13 11"/><path d="M7 12v16h18V12"/><path d="M13 28v-8h6v8" stroke="var(--bronze)"/></svg><span><b class="fd">Bunyod</b><small class="ey">Arxitektura &amp; Qurilish</small></span></span></a><ul class="d"><li><a class="lu" href="index.html" data-pt data-n="" data-t="Bosh sahifa">Bosh sahifa</a></li><li><a class="lu" href="xizmatlar.html" data-pt data-n="" data-t="Xizmatlar">Xizmatlar</a></li><li><a class="lu" href="loyihalar.html" data-pt data-n="" data-t="Loyihalar">Loyihalar</a></li><li><a class="lu" href="uy-tanlash.html" data-pt data-n="" data-t="Uy tanlash">Uy tanlash</a></li><li><a class="lu" href="biz-haqimizda.html" data-pt data-n="" data-t="Biz haqimizda">Biz haqimizda</a></li><li><a class="lu" href="boglanish.html" data-pt data-n="" data-t="Bog‘lanish">Bog‘lanish</a></li></ul><a class="btn lx cta" href="boglanish.html" data-pt data-n="" data-t="Bog‘lanish" id="ct1">Loyihani boshlash</a><button id="mb" aria-label="Menyuni ochish"><svg class="i"><use id="mi" href="#mn"/></svg></button></nav><div id="mm"><ul><li><a class="mo" href="index.html" data-pt data-n="" data-t="Bosh sahifa">Bosh sahifa<span class="ey">01</span></a></li><li><a class="mo" href="xizmatlar.html" data-pt data-n="" data-t="Xizmatlar">Xizmatlar<span class="ey">02</span></a></li><li><a class="mo" href="loyihalar.html" data-pt data-n="" data-t="Loyihalar">Loyihalar<span class="ey">03</span></a></li><li><a class="mo" href="uy-tanlash.html" data-pt data-n="" data-t="Uy tanlash">Uy tanlash<span class="ey">04</span></a></li><li><a class="mo" href="biz-haqimizda.html" data-pt data-n="" data-t="Biz haqimizda">Biz haqimizda<span class="ey">05</span></a></li><li><a class="mo" href="boglanish.html" data-pt data-n="" data-t="Bog‘lanish">Bog‘lanish<span class="ey">06</span></a></li></ul><a class="btn lx" style="width:100%;margin-top:2.5rem" href="boglanish.html" data-pt data-n="" data-t="Bog‘lanish">Loyihani boshlash</a></div></header>
+<main>
+<section class="au">
+<div class="au-v"><img src="assets/cta-house.jpg" alt="Oq fasadli zamonaviy hovli uy"><div><p class="ey" style="color:var(--bs)">Shaxsiy kabinet</p><h2 class="fd">Orzuingizdagi uyni <em style="color:var(--bs)">birga boshlaymiz.</em></h2>
+<ul><li><svg class="i" viewBox="0 0 24 24"><use href="#ck"/></svg>Buyurtmalaringiz bir joyda</li><li><svg class="i" viewBox="0 0 24 24"><use href="#ck"/></svg>Tanlangan loyihani tezda buyurtma qiling</li><li><svg class="i" viewBox="0 0 24 24"><use href="#ck"/></svg>Menejerimiz sizga o‘zi bog‘lanadi</li></ul></div></div>
+<div class="au-f"><div class="au-c">
+<p class="ey br">Shaxsiy kabinet</p><h1 class="fd" id="ah">Hisobingizga kiring</h1>
+<div class="au-n" id="an"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div>Buyurtma berish uchun avval tizimga kiring yoki ro‘yxatdan o‘ting.<b id="ap"></b></div></div>
+<div class="au-t" role="tablist"><button type="button" role="tab" id="tl" aria-selected="true">Kirish</button><button type="button" role="tab" id="tr" aria-selected="false">Ro‘yxatdan o‘tish</button></div>
+<form id="fl" novalidate>
+<div class="f"><label class="ey" for="lp">Telefon raqami</label><input id="lp" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67"><small></small></div>
+<div class="f"><label class="ey" for="lw">Parol</label><input id="lw" type="password" autocomplete="current-password" placeholder="••••••"><small></small></div>
+<p class="au-e" id="le" role="alert"></p>
+<button class="btn lx" type="submit">Kirish</button>
+<p class="au-s"><span>Hisobingiz yo‘qmi?</span><button type="button" data-go="r">Ro‘yxatdan o‘tish</button></p>
+</form>
+<form id="fr" novalidate hidden>
+<div class="f"><label class="ey" for="rn">Ismingiz</label><input id="rn" autocomplete="name" placeholder="Aziz Olimov"><small></small></div>
+<div class="f"><label class="ey" for="rp">Telefon raqami</label><input id="rp" type="tel" autocomplete="tel" placeholder="+998 90 123 45 67"><small></small></div>
+<div class="g2"><div class="f"><label class="ey" for="rw">Parol</label><input id="rw" type="password" autocomplete="new-password" placeholder="••••••"><small></small></div>
+<div class="f"><label class="ey" for="rc">Parolni takrorlang</label><input id="rc" type="password" autocomplete="new-password" placeholder="••••••"><small></small></div></div>
+<p class="au-e" id="re" role="alert"></p>
+<button class="btn lx" type="submit">Ro‘yxatdan o‘tish</button>
+<p class="au-s"><span>Hisobingiz bormi?</span><button type="button" data-go="l">Kirish</button></p>
+</form>
+</div></div></section>
+</main>
+<footer><div class="w"><div class="g"><div class="c5"><span class="logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 15 16 4l13 11"/><path d="M7 12v16h18V12"/><path d="M13 28v-8h6v8" stroke="var(--bronze)"/></svg><span><b class="fd">Bunyod</b><small class="ey">Arxitektura &amp; Qurilish</small></span></span><p style="margin-top:1.5rem;max-width:24rem;color:var(--im)">Hashamatli xususiy uylar, villalar va hovlilarni loyihalash hamda qurish.</p><a class="igc ig2" href="https://www.instagram.com/xoji.builds/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @xoji.builds" title="@xoji.builds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".7" fill="currentColor" stroke="none"/></svg></a></div><nav class="c5" style="grid-column:span 3"><p class="ey sm" style="color:var(--bs)">Bo‘limlar</p><ul><li><a class="lu" href="index.html">Bosh sahifa</a></li><li><a class="lu" href="xizmatlar.html">Xizmatlar</a></li><li><a class="lu" href="loyihalar.html">Loyihalar</a></li><li><a class="lu" href="uy-tanlash.html">Uy tanlash</a></li><li><a class="lu" href="biz-haqimizda.html">Biz haqimizda</a></li><li><a class="lu" href="boglanish.html">Bog‘lanish</a></li></ul></nav><div style="grid-column:span 4"><p class="ey sm" style="color:var(--bs)">Aloqa</p><ul><li><a class="lu" href="tel:+998901234567">+998 90 123 45 67</a></li><li><a class="lu" href="mailto:info@bunyod.uz">info@bunyod.uz</a></li><li>Toshkent, Mirzo Ulug‘bek tumani</li></ul></div></div>
+
+<div class="cp"><p>© <span id="yr">2026</span> Bunyod Arxitektura &amp; Qurilish. Barcha huquqlar himoyalangan.</p><p class="ey" style="font-size:.56rem">Sifat. Ishonch. Mukammal arxitektura.</p></div></div></footer>
+<script src="loyihalar-data.js"></script><script src="i18n-data.js"></script><script src="i18n-extra.js"></script><script src="auth.js"></script><script src="i18n.js"></script>
+<script>
+const $=id=>document.getElementById(id),hd=$("hd");$("yr").textContent=new Date().getFullYear();
+let open=0;const setOpen=v=>{open=v;hd.classList.toggle("o",!!v);document.body.style.overflow=v?"hidden":"";$("mi").setAttribute("href",v?"#x":"#mn")};
+$("mb").onclick=()=>setOpen(!open);document.querySelectorAll("#mm a").forEach(a=>a.onclick=()=>setOpen(0));
+</script>
+<script>
+(()=>{
+const A=window.BNAuth,T=s=>BN.t(s),q=new URLSearchParams(location.search);
+const next=A.safeNext(q.get("next"));
+if(A.current()){location.replace(next||"profil.html")}
+const fl=$("fl"),fr=$("fr"),tl=$("tl"),tr=$("tr");
+function tab(r){fl.hidden=r;fr.hidden=!r;tl.setAttribute("aria-selected",String(!r));tr.setAttribute("aria-selected",String(!!r));$("ah").textContent=T(r?"Yangi hisob yarating":"Hisobingizga kiring");
+ try{history.replaceState(null,"",location.pathname+location.search+(r?"#royxat":""))}catch(e){}}
+tl.onclick=()=>tab(0);tr.onclick=()=>tab(1);
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{tab(b.dataset.go==="r");(b.dataset.go==="r"?$("rn"):$("lp")).focus()});
+if(location.hash==="#royxat"||q.get("tab")==="register")tab(1);
+// buyurtma uchun yo'naltirilgan bo'lsa — qaysi loyiha ekanini ko'rsatamiz
+if(next){const m=next.match(/loyiha\.html\?n=(\d+)/),p=m&&BNP.P.find(x=>x.n===+m[1]);
+ if(p&&/buyurtma=1/.test(next)){$("an").classList.add("on");$("ap").textContent=T("Tanlangan loyiha")+": №"+p.n+" — "+T(p.name);tab(1)}}
+const clr=f=>{f.querySelectorAll(".f").forEach(x=>{x.classList.remove("e");x.querySelector("small").textContent=""});f.querySelector(".au-e").textContent=""};
+function fail(f,map,r){const el=map[r.f];if(el){const w=el.closest(".f");w.classList.add("e");w.querySelector("small").textContent=T(r.err);el.focus()}else f.querySelector(".au-e").textContent=T(r.err)}
+const done=()=>{location.href=next||"profil.html"};
+fl.onsubmit=e=>{e.preventDefault();clr(fl);A.login($("lp").value,$("lw").value).then(r=>r.ok?done():fail(fl,{phone:$("lp"),pw:$("lw")},r))};
+fr.onsubmit=e=>{e.preventDefault();clr(fr);
+ if($("rw").value!==$("rc").value&&$("rw").value.length>=6){fail(fr,{pw:$("rc")},{f:"pw",err:"Parollar bir xil emas"});return}
+ A.register($("rn").value,$("rp").value,$("rw").value).then(r=>r.ok?done():fail(fr,{name:$("rn"),phone:$("rp"),pw:$("rw")},r))};
+})();
+</script>
+<script src="anim.js"></script></body></html>

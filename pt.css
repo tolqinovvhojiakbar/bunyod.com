@@ -1,0 +1,35 @@
+/* Sahifalararo o'tish animatsiyasi */
+.pt{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;background:#17130f;color:#f6f1ea;text-align:center;padding:1.5rem;pointer-events:all;overflow:hidden}
+.pt .n{font:400 clamp(6rem,20vw,13rem)/.9 "Instrument Serif",Georgia,serif;color:#cfa77a;letter-spacing:-.02em}
+.pt .t{font:400 clamp(1.5rem,4vw,2.5rem)/1.1 "Instrument Serif",Georgia,serif;max-width:32rem;opacity:.92}
+.pt .n:empty{display:none}
+html:not(.go) .ri{opacity:0}
+
+/* nav 6 ta havola */
+@media(min-width:1024px){header nav.top ul.d{gap:1.35rem;font-size:.78rem}header nav.top .cta{padding:0 1.1rem;font-size:.7rem}}
+@media(min-width:1280px){header nav.top ul.d{gap:1.9rem;font-size:.82rem}header nav.top .cta{padding:0 2rem;font-size:.78rem}}
+
+/* Saytga kirish: logo animatsiyasi */
+.pt.bi{gap:0;background:#17130f}
+.bi .bl{width:clamp(5.5rem,13vw,8rem);height:auto;overflow:visible;stroke:#f6f1ea;stroke-width:1.1}
+.bi .bl path{stroke-dasharray:1;stroke-dashoffset:1}
+.bi .bl .p3{stroke:#cfa77a}
+.bi .bw{overflow:hidden;margin-top:1.6rem;padding:.1em .2em}
+.bi .bb{display:block;font:400 clamp(3.2rem,10vw,6rem)/1 "Instrument Serif",Georgia,serif;letter-spacing:-.01em;color:#f6f1ea;transform:translateY(115%)}
+.bi .bk{display:block;width:clamp(5rem,14vw,9rem);height:1px;margin:1.1rem 0 1rem;background:#cfa77a;transform:scaleX(0)}
+.bi .bs{opacity:0;font:500 .7rem/1 "Hanken Grotesk",system-ui,sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#cfa77a}
+
+/* Kirish / loyiha / profil sahifalari */
+@keyframes bzoom{from{transform:scale(1.12)}to{transform:none}}
+@keyframes bfade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+html.go .au-v img{animation:bzoom 2.6s cubic-bezier(.16,1,.3,1) both}
+html.go .au form:not([hidden]){animation:bfade .7s cubic-bezier(.16,1,.3,1) both}
+@media(prefers-reduced-motion:reduce){html.go .au-v img,html.go .au form:not([hidden]){animation:none}}
+
+/* Footer: Instagram tugmasi */
+.igc{display:inline-grid;place-items:center;flex:none;width:3rem;height:3rem;border:1px solid #cfa77a;border-radius:50%;color:#cfa77a;transition:background .4s,color .4s,transform .5s cubic-bezier(.16,1,.3,1)}
+.igc svg{width:1.3rem;height:1.3rem}
+.igc.ig2{margin-top:1.5rem}
+.igc:hover{background:#cfa77a;color:#17130f;transform:translateY(-3px)}
+.igc:focus-visible{outline:2px solid #cfa77a;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.igc,.igc:hover{transition:none;transform:none}}

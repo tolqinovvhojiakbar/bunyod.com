@@ -1,0 +1,10 @@
+(()=>{const Q=(s,r=document)=>[...r.querySelectorAll(s)],RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const sp=document.getElementById("sp"),par=Q(".ph img");let tk=0;
+const upd=()=>{tk=0;const H=document.documentElement.scrollHeight-innerHeight;sp.style.setProperty("--sp",H>0?scrollY/H:0);
+ if(!RM)par.forEach(i=>{const r=i.parentElement.getBoundingClientRect();if(r.bottom<-100||r.top>innerHeight+100)return;i.style.setProperty("--py",((r.top+r.height/2-innerHeight/2)/innerHeight*-36).toFixed(1)+"px")})};
+addEventListener("scroll",()=>{tk||(tk=requestAnimationFrame(upd))},{passive:true});upd();
+const init=()=>{const MP=new WeakMap(),io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){(MP.get(e.target)||e.target).classList.add("on");io.unobserve(e.target)}}),{rootMargin:"0px 0px -10% 0px",threshold:.12});
+ Q(".rv").forEach(e=>io.observe(e));Q(".ph").forEach(e=>{const w=e.closest(".pw")||e.parentElement;MP.set(w,e);io.observe(w)});
+ Q(".facts b").forEach(el=>{const m=el.textContent.match(/^(\d+)(.*)$/);if(!m||RM)return;const c=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;c.disconnect();const to=+m[1],t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1600),v=1-Math.pow(1-p,4);el.textContent=Math.round(to*v)+m[2];p<1&&requestAnimationFrame(f)})(t0)}),{threshold:.6});c.observe(el)})};
+document.documentElement.classList.contains("go")?init():document.addEventListener("ptgo",init,{once:true});
+})();
